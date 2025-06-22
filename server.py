@@ -1,4 +1,3 @@
-import requests  # 🔺新增這行，讓 Flask 能發出 POST 請求
 from flask import Flask, request, render_template, redirect, url_for
 from datetime import datetime
 
@@ -10,6 +9,7 @@ SAVE_FILE = "received_orders.txt"
 def index():
     return render_template('form.html')
 
+import requests
 @app.route('/submit', methods=['POST'])
 def submit():
     item = request.form.get('item')
@@ -24,7 +24,7 @@ def submit():
 
     # 🔺這裡是重點：轉送到你電腦的公開 API
     try:
-        requests.post("https://你的公開網址/receive", json={
+        requests.post("https://ad50-2401-e180-8d82-7830-34a8-7c19-e6f1-c2e6.ngrok-free.app/receive", json={
             "item": item,
             "quantity": quantity,
             "address": address
