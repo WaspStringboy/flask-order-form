@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>訂購表單</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding-top: 50px;
+        }
+        form {
+            background-color: #fff;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        select, input, button {
+            font-size: 16px;
+            padding: 10px;
+            margin: 10px 0;
+            width: 250px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>🍖 年貨訂購表單</h2>
+    <form action="/submit" method="POST">
+        <label for="item">買什麼：</label><br>
+        <select name="item" id="item" required>
+            <option value="臘肉">臘肉</option>
+            <option value="香腸">香腸</option>
+        </select><br>
+
+        <label for="quantity">幾個：</label><br>
+        <input type="number" name="quantity" id="quantity" min="1" required><br>
+
+        <label for="address">輸入地址：</label><br>
+        <input type="text" name="address" id="address" required><br>
+
+        <button type="submit">送出訂單</button>
+    </form>
+</body>
+</html>
