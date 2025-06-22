@@ -24,7 +24,7 @@ def submit():
 
     # 🔺這裡是重點：轉送到你電腦的公開 API
     try:
-        requests.post("https://ad50-2401-e180-8d82-7830-34a8-7c19-e6f1-c2e6.ngrok-free.app/receive", json={
+        requests.post("https://你的公開網址/receive", json={
             "item": item,
             "quantity": quantity,
             "address": address
@@ -33,6 +33,7 @@ def submit():
         print("⚠️ 傳送回家失敗：", e)
 
     return redirect(url_for('success'))
+
 
 
 @app.route('/success')
